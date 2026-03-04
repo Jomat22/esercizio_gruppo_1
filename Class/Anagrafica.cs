@@ -15,4 +15,6 @@ class Anagrafica(long id, string email)
             } else _email = value;
         }
     } = email;
+
+    public virtual string ToCsvRow() {}
 }

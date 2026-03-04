@@ -5,4 +5,6 @@ class Operazione
 
     public long Id { get => _id; set => _id = value; }
     public long ClientId { get => _clientId; set => _clientId = value; }
+
+    public virtual string ToCsvRow() {}
 }

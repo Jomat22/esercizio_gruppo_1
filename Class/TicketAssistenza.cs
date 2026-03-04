@@ -4,7 +4,8 @@ class TicketAssistenza(long id, long clientId, DateOnly dataApertura, string pri
     private string _priorita;
     private int _oreLavoro;
     private decimal _costoOrario;
-    public DateOnly Data { get => _dataApertura; set => _dataApertura = value; } = dataApertura;
+
+    public DateOnly DataApertura { get => _dataApertura; set => _dataApertura = value; } = dataApertura;
     public string Priorita { 
         get => _priorita; 
         set { 
@@ -19,5 +20,10 @@ class TicketAssistenza(long id, long clientId, DateOnly dataApertura, string pri
             if (Priorita.Equals("ALTA", StringComparison.OrdinalIgnoreCase)) return OreLavoro * CostoOrario * 2;
             else return OreLavoro * CostoOrario;
         } 
+    }
+
+    public override string ToCsvRow()
+    {
+        return $"ID: {ID}\tID Cliente: {ClientId}Data Apertura: {DataApertura}\tPriorità: {Priorita}\tOre Lavoro: {OreLavoro}\tCosto Orario: {CostoOrario}\tTotale: {Totale}";
     }
 }

@@ -8,4 +8,9 @@ class ClienteAzienda(long id, string email, string ragioneSociale, string partit
     public string PartitaIVA { get => _partitaIVA; set => _partitaIVA = value; } = partitaIVA;
     public string Referente { get => _referente; set => _referente = value; } = referente;
 
+
+    public override string ToCsvRow()
+    {
+        return $"ID: {ID}\tEmail: {Email}\tRag. Sociale: {RagioneSociale}\tPartita IVA: {PartitaIVA}\tReferente: {Referente}";
+    }
 }

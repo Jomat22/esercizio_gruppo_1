@@ -16,7 +16,7 @@ public static class EsportatoreDati
         ScriviFile("operazioni.csv", header, lista);
     }
 
-    private static void ScriviFile<T>(string nomeFile, string intestazione, List<T> dati) where T : IEsportabile
+    private static void ScriviFile(string nomeFile, string intestazione, List<Anagrafica> dati)
     {
         try 
         {

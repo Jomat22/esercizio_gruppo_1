@@ -1,13 +1,5 @@
 class Program
 {
-    public static void ContinueAndClear()
-    {
-        Console.WriteLine("\nPremere un tasto per continuare...");
-        Console.Write("\x1b[3j");
-        Console.ReadKey(true);
-        Console.Clear();
-    }
-    
     static readonly Random random = new();
     static List<Anagrafica> listAnagrafica = [];
     static List<Operazione> listOperazione = [];
@@ -357,5 +349,13 @@ class Program
 
         Console.WriteLine("Liste popolate con successo.");
         } catch(Exception ex){ Console.Clear(); Console.WriteLine($"[SEEDING ERROR] Errore critico durante il popolamento: {ex.Message}"); }
+    }
+
+    public static void ContinueAndClear()
+    {
+        Console.WriteLine("\nPremere un tasto per continuare...");
+        Console.Write("\x1b[3j");
+        Console.ReadKey(true);
+        Console.Clear();
     }
 }
